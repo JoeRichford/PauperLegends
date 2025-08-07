@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pauper Legends - Decks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url(https://raw.githubusercontent.com/pauperlegends/PauperLegends/refs/heads/main/pauperlegends.jpg) no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid crimson;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: gold;
+    }
+
+    nav {
+      background-color: #222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: crimson;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .section h2 {
+      color: crimson;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+
+    .deck {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .deck h3 {
+      margin: 0;
+      cursor: pointer;
+      color: #33ccff;
+      font-size: 1.2rem;
+    }
+
+    .card-list {
+      display: none;
+      margin-top: 10px;
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .card-list li {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      cursor: pointer;
+      margin: 2px 0;
+    }
+
+    .card-list li strong {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ffcc66;
+    }
+
+    .card-list li:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    #card-preview {
+      position: fixed;
+      top: 100px;
+      right: 30px;
+      width: 250px;
+      height: 350px;
+      border: 2px solid #555;
+      background-color: #1e1e1e;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    #card-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    footer {
+      background-color: #111;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pauper Legends</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="decks.html">Decks</a>
+    <a href="#tournaments">Tournaments</a>
+    <a href="#rules">Rules</a>
+    <a href="#banned">Banned</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="section">
+    <h2>Deck Showcase</h2>
+
+    <!-- 🔻 START DECK BLOCK -->
+    <div class="deck">
+  <h3 onclick="toggleDeck(this)">goblin aggro</h3>
+  <ul class="card-list">
+    <li><strong>COMMANDER</strong></li>
+    <li onclick="showCardImage(event, 'General Kreat, the Boltbringer')">1 General Kreat, the Boltbringer</li>
+    <br />
+    <li><strong>CREATURES</strong></li>
+    <li onclick="showCardImage(event, 'Akki Scrapchomper')">1 Akki Scrapchomper</li>
+    <li onclick="showCardImage(event, 'Fanatical Firebrand')">1 Fanatical Firebrand</li>
+    <li onclick="showCardImage(event, 'Foundry Street Denizen')">1 Foundry Street Denizen</li>
+    <li onclick="showCardImage(event, 'Goblin Blast-Runner')">1 Goblin Blast-Runner</li>
+    <li onclick="showCardImage(event, 'Goblin Bushwhacker')">1 Goblin Bushwhacker</li>
+    <li onclick="showCardImage(event, 'Goblin Champion')">1 Goblin Champion</li>
+    <li onclick="showCardImage(event, 'Goblin Chirurgeon')">1 Goblin Chirurgeon</li>
+    <li onclick="showCardImage(event, 'Goblin Javelineer')">1 Goblin Javelineer</li>
+    <li onclick="showCardImage(event, 'Goblin Sledder')">1 Goblin Sledder</li>
+    <li onclick="showCardImage(event, 'Goblin Taskmaster')">1 Goblin Taskmaster</li>
+    <li onclick="showCardImage(event, 'Goblin Tomb Raider')">1 Goblin Tomb Raider</li>
+    <li onclick="showCardImage(event, 'Lavastep Raider')">1 Lavastep Raider</li>
+    <li onclick="showCardImage(event, 'Mogg Raider')">1 Mogg Raider</li>
+    <li onclick="showCardImage(event, 'Mudbutton Clanger')">1 Mudbutton Clanger</li>
+    <li onclick="showCardImage(event, 'Reckless Lackey')">1 Reckless Lackey</li>
+    <li onclick="showCardImage(event, 'Sarpadian Simulacrum')">1 Sarpadian Simulacrum</li>
+    <li onclick="showCardImage(event, 'Skirk Prospector')">1 Skirk Prospector</li>
+    <li onclick="showCardImage(event, 'Tin Street Dodger')">1 Tin Street Dodger</li>
+    <li onclick="showCardImage(event, 'Dark-Dweller Oracle')">1 Dark-Dweller Oracle</li>
+    <li onclick="showCardImage(event, 'Devoted Duelist')">1 Devoted Duelist</li>
+    <li onclick="showCardImage(event, 'Goblin Instigator')">1 Goblin Instigator</li>
+    <li onclick="showCardImage(event, 'Goblin Lookout')">1 Goblin Lookout</li>
+    <li onclick="showCardImage(event, 'Mogg War Marshal')">1 Mogg War Marshal</li>
+    <li onclick="showCardImage(event, 'Mudbrawler Cohort')">1 Mudbrawler Cohort</li>
+    <li onclick="showCardImage(event, 'Shock Brigade')">1 Shock Brigade</li>
+    <li onclick="showCardImage(event, 'Sparksmith')">1 Sparksmith</li>
+    <li onclick="showCardImage(event, 'Goblin Matron')">1 Goblin Matron</li>
+    <li onclick="showCardImage(event, 'Molten Gatekeeper')">1 Molten Gatekeeper</li>
+    <li onclick="showCardImage(event, 'Simian Spirit Guide')">1 Simian Spirit Guide</li>
+    <li onclick="showCardImage(event, 'Underfoot Underdogs')">1 Underfoot Underdogs</li>
+    <li onclick="showCardImage(event, 'Beetleback Chief')">1 Beetleback Chief</li>
+    <br />
+    <li><strong>ARTIFACTS</strong></li>
+    <li onclick="showCardImage(event, 'Lotus Petal')">1 Lotus Petal</li>
+    <br />
+    <li><strong>INSTANTS</strong></li>
+    <li onclick="showCardImage(event, 'Brightstone Ritual')">1 Brightstone Ritual</li>
+    <li onclick="showCardImage(event, 'Collateral Damage')">1 Collateral Damage</li>
+    <li onclick="showCardImage(event, 'Lightning Bolt')">1 Lightning Bolt</li>
+    <li onclick="showCardImage(event, 'Pyroblast')">1 Pyroblast</li>
+    <li onclick="showCardImage(event, 'Red Elemental Blast')">1 Red Elemental Blast</li>
+    <li onclick="showCardImage(event, 'Weapon Surge')">1 Weapon Surge</li>
+    <li onclick="showCardImage(event, 'Chandra's Pyrohelix')">1 Chandra's Pyrohelix</li>
+    <li onclick="showCardImage(event, 'Incinerate')">1 Incinerate</li>
+    <li onclick="showCardImage(event, 'Lightning Strike')">1 Lightning Strike</li>
+    <li onclick="showCardImage(event, 'Magma Jet')">1 Magma Jet</li>
+    <li onclick="showCardImage(event, 'Searing Blaze')">1 Searing Blaze</li>
+    <li onclick="showCardImage(event, 'Searing Spear')">1 Searing Spear</li>
+    <li onclick="showCardImage(event, 'Twin Bolt')">1 Twin Bolt</li>
+    <li onclick="showCardImage(event, 'Brimstone Volley')">1 Brimstone Volley</li>
+    <li onclick="showCardImage(event, 'Goblin Surprise')">1 Goblin Surprise</li>
+    <li onclick="showCardImage(event, 'Thunderclap')">1 Thunderclap</li>
+    <li onclick="showCardImage(event, 'Volatile Claws')">1 Volatile Claws</li>
+    <li onclick="showCardImage(event, 'Mine Collapse')">1 Mine Collapse</li>
+    <li onclick="showCardImage(event, 'Fireblast')">1 Fireblast</li>
+    <br />
+    <li><strong>SORCERIES</strong></li>
+    <li onclick="showCardImage(event, 'Goblin Grenade')">1 Goblin Grenade</li>
+    <li onclick="showCardImage(event, 'Rite of Flame')">1 Rite of Flame</li>
+    <li onclick="showCardImage(event, 'Dragon Fodder')">1 Dragon Fodder</li>
+    <li onclick="showCardImage(event, 'Highway Robbery')">1 Highway Robbery</li>
+    <li onclick="showCardImage(event, 'Krenko's Command')">1 Krenko's Command</li>
+    <li onclick="showCardImage(event, 'Reckless Impulse')">1 Reckless Impulse</li>
+    <li onclick="showCardImage(event, 'Wrenn's Resolve')">1 Wrenn's Resolve</li>
+    <li onclick="showCardImage(event, 'Hordeling Outburst')">1 Hordeling Outburst</li>
+    <li onclick="showCardImage(event, 'Empty the Warrens')">1 Empty the Warrens</li>
+    <br />
+    <li><strong>ENCHANTMENTS</strong></li>
+    <li onclick="showCardImage(event, 'Impact Tremors')">1 Impact Tremors</li>
+    <li onclick="showCardImage(event, 'Makeshift Munitions')">1 Makeshift Munitions</li>
+    <li onclick="showCardImage(event, 'Raid Bombardment')">1 Raid Bombardment</li>
+    <br />
+    <li><strong>LANDS</strong></li>
+    <li onclick="showCardImage(event, 'Mountain')">34 Mountain</li>
+    <li onclick="showCardImage(event, 'Opal Palace')">1 Opal Palace</li>
+    <li onclick="showCardImage(event, 'Path of Ancestry')">1 Path of Ancestry</li>
+    <br />
+  </ul>
+</div>
+    <!-- 🔺 END DECK BLOCK -->
+
+  </div>
+
+  <!-- 📌 Fixed card image preview panel -->
+  <div id="card-preview">
+    <span style="color: #999; font-size: 0.85rem;">Click a card to preview</span>
+  </div>
+
+  <footer>
+    &copy; 2025 Pauper Legends. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleDeck(header) {
+      const list = header.nextElementSibling;
+      list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showCardImage(event, cardName) {
+      const preview = document.getElementById('card-preview');
+      preview.innerHTML = ''; // Clear old image
+
+      const img = document.createElement('img');
+      const encoded = encodeURIComponent(cardName);
+      img.src = `https://api.scryfall.com/cards/named?exact=${encoded}&format=image`;
+
+      preview.appendChild(img);
+    }
+  </script>
+</body>
+</html>
