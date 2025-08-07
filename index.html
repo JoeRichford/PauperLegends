@@ -111,6 +111,26 @@
     </p>
   </div>
 
+  <div class="section" id="deck-list">
+  <h2>Community Decks</h2>
+  <div id="decksContainer" style="display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
+    <!-- Decks will be dynamically inserted here -->
+  </div>
+</div>
+
+<div class="section" id="submit-deck">
+  <h2>Submit a Deck</h2>
+  <form id="deckForm">
+    <p><input type="text" name="deckName" placeholder="Deck Name" required></p>
+    <p><input type="text" name="commander" placeholder="Commander" required></p>
+    <p><input type="text" name="colors" placeholder="Colors / Archetype" required></p>
+    <p><textarea name="description" placeholder="Brief Description" rows="3" required></textarea></p>
+    <p><input type="url" name="deckLink" placeholder="Decklist Link (Moxfield, etc.)" required></p>
+    <p><input type="url" name="image" placeholder="Image URL (card or deck art)" required></p>
+    <p><button type="submit" style="padding:10px 20px;background-color:crimson;color:white;border:none;border-radius:5px;">Submit</button></p>
+  </form>
+</div>
+
   <div class="section" id="tournaments">
     <h2>Upcoming Events</h2>
     <ul>
@@ -166,9 +186,56 @@
     &copy; 2025 Pauper legends. All rights reserved.
   </footer>
 
+  <script>
+  const form = document.getElementById("deckForm");
+  const container = document.getElementById("decksContainer");
+
+  const decks = JSON.parse(localStorage.getItem("decks")) || [];
+
+  const renderDecks = () => {
+    container.innerHTML = '';
+    decks.forEach(deck => {
+      const card = document.createElement('div');
+      card.style.backgroundColor = '#222';
+      card.style.border = '1px solid #444';
+      card.style.borderRadius = '10px';
+      card.style.padding = '15px';
+      card.innerHTML = `
+        <img src="${deck.image}" alt="Deck image" style="width:100%;border-radius:8px;">
+        <h3 style="color:gold;margin-top:10px;">${deck.deckName}</h3>
+        <p><strong>Commander:</strong> ${deck.commander}</p>
+        <p><strong>Colors:</strong> ${deck.colors}</p>
+        <p>${deck.description}</p>
+        <a href="${deck.deckLink}" target="_blank" style="color:crimson;">View Full Decklist</a>
+      `;
+      container.appendChild(card);
+    });
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const newDeck = {
+      deckName: formData.get("deckName"),
+      commander: formData.get("commander"),
+      colors: formData.get("colors"),
+      description: formData.get("description"),
+      deckLink: formData.get("deckLink"),
+      image: formData.get("image")
+    };
+    decks.unshift(newDeck); // newest on top
+    localStorage.setItem("decks", JSON.stringify(decks));
+    renderDecks();
+    form.reset();
+  });
+
+  renderDecks();
+</script>
+
 </body>
 
 </html>
+
 
 
 
