@@ -5,80 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pauper legends</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url(https://raw.githubusercontent.com/pauperlegends/PauperLegends/refs/heads/main/pauperlegends.jpg) no-repeat center center fixed;
-      background-size: cover;
-      color: #f0f0f0;
-    }
+  body {
+    margin: 0;
+    font-family: 'Cinzel', serif; /* Fantasy style font */
+    background: url(https://raw.githubusercontent.com/pauperlegends/PauperLegends/refs/heads/main/pauperlegends.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+  }
 
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid crimson;
-    }
+  header {
+    background: linear-gradient(to bottom, rgba(17,17,17,0.9), rgba(0,0,0,0.6));
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 3px solid gold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: gold;
-    }
+  header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: gold;
+    text-shadow: 0 0 10px rgba(255,215,0,0.7);
+  }
 
-    header p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
+  header p {
+    font-size: 1.3rem;
+    color: #ccc;
+    font-style: italic;
+  }
 
-    nav {
-      background-color: #222;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      padding: 10px 0;
-      border-bottom: 1px solid #333;
-    }
+  nav {
+    background: rgba(20,20,20,0.95);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 12px 0;
+    border-bottom: 2px solid crimson;
+  }
 
-    nav a {
-      color: #f0f0f0;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+  nav a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s;
+  }
 
-    nav a:hover {
-      color: crimson;
-    }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: crimson;
+    transition: width 0.3s;
+  }
 
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+  nav a:hover {
+    color: crimson;
+  }
 
-    .section h2 {
-      color: crimson;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
-    }
+  nav a:hover::after {
+    width: 100%;
+  }
 
-    ul {
-      line-height: 1.8;
-    }
+  .section {
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    padding: 30px 25px;
+    margin: 40px auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  }
 
-    footer {
-      background-color: #111;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      margin-top: 40px;
-      border-top: 1px solid #333;
-    }
-  </style>
+  .section h2 {
+    color: gold;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-bottom: 1px solid crimson;
+    padding-bottom: 5px;
+    text-shadow: 0 0 5px rgba(255,215,0,0.6);
+  }
+
+  ul {
+    line-height: 1.8;
+  }
+
+  footer {
+    background: rgba(15, 15, 15, 0.95);
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+    border-top: 2px solid crimson;
+  }
+</style>
 </head>
 <body>
 
@@ -141,7 +167,8 @@
     <h2>Banned & Restrictions</h2>
     <p>To keep gameplay fun, fair, and strategic, the following cards are currently banned:</p>
     <ul>
-      <li><strong>Gut, True Soul Zealot.</strong> - proven problematic in a "common rarity" card pool setting.</li>
+      <li><strong>Gut, True Soul Zealot.</strong> - Proven problematic in a "common rarity" card pool setting.</li>
+      <li><strong>Oubliette</strong> - Proven to entirely shutdown commanders because of lack of interactions available in a "common rarity" card pool setting.</li>
     </ul>
     <p>
       Additional restrictions may apply to cards enabling infinite combos. Stay tuned for regular updates.
@@ -169,11 +196,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
