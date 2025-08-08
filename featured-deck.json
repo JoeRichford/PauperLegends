@@ -1,0 +1,406 @@
+{
+  "deckName": "Anafenza Go Wide",
+  "author": "Donovan Babiano",
+  "cards": [
+    {
+      "name": "Anafenza, Kin-Tree Spirit",
+      "type": "Legendary Creature"
+    },
+    {
+      "name": "Benevolent Bodyguard",
+      "type": "Creature"
+    },
+    {
+      "name": "Deftblade Elite",
+      "type": "Creature"
+    },
+    {
+      "name": "Doomed Traveler",
+      "type": "Creature"
+    },
+    {
+      "name": "Frontline Strategist",
+      "type": "Creature"
+    },
+    {
+      "name": "Garrison Cat",
+      "type": "Creature"
+    },
+    {
+      "name": "Hunted Witness",
+      "type": "Creature"
+    },
+    {
+      "name": "Icatian Javelineers",
+      "type": "Creature"
+    },
+    {
+      "name": "Law-Rune Enforcer",
+      "type": "Creature"
+    },
+    {
+      "name": "Novice Inspector",
+      "type": "Creature"
+    },
+    {
+      "name": "Sacred Cat",
+      "type": "Creature"
+    },
+    {
+      "name": "Thraben Inspector",
+      "type": "Creature"
+    },
+    {
+      "name": "Ainok Bond-Kin",
+      "type": "Creature"
+    },
+    {
+      "name": "Bishop's Soldier",
+      "type": "Creature"
+    },
+    {
+      "name": "Cathar Commando",
+      "type": "Creature"
+    },
+    {
+      "name": "Dawnbringer Cleric",
+      "type": "Creature"
+    },
+    {
+      "name": "Fear of Surveillance",
+      "type": "Creature"
+    },
+    {
+      "name": "Fencing Ace",
+      "type": "Creature"
+    },
+    {
+      "name": "Helpful Hunter",
+      "type": "Creature"
+    },
+    {
+      "name": "Kor Skyfisher",
+      "type": "Creature"
+    },
+    {
+      "name": "Leonin Surveyor",
+      "type": "Creature"
+    },
+    {
+      "name": "Outlaw Medic",
+      "type": "Creature"
+    },
+    {
+      "name": "Raffine's Informant",
+      "type": "Creature"
+    },
+    {
+      "name": "Spirited Companion",
+      "type": "Creature"
+    },
+    {
+      "name": "Standard Bearer",
+      "type": "Creature"
+    },
+    {
+      "name": "Errand-Rider of Gondor",
+      "type": "Creature"
+    },
+    {
+      "name": "Inspiring Overseer",
+      "type": "Creature"
+    },
+    {
+      "name": "Kor Sanctifiers",
+      "type": "Creature"
+    },
+    {
+      "name": "Militia Bugler",
+      "type": "Creature"
+    },
+    {
+      "name": "Ministrant of Obligation",
+      "type": "Creature"
+    },
+    {
+      "name": "Priest of Ancient Lore",
+      "type": "Creature"
+    },
+    {
+      "name": "Roving Harper",
+      "type": "Creature"
+    },
+    {
+      "name": "Aerie Auxiliary",
+      "type": "Creature"
+    },
+    {
+      "name": "Arashin Sunshield",
+      "type": "Creature"
+    },
+    {
+      "name": "Basri's Acolyte",
+      "type": "Creature"
+    },
+    {
+      "name": "Blessed Hippogriff // Tyr's Blessing",
+      "type": "Creature"
+    },
+    {
+      "name": "Felidar Savior",
+      "type": "Creature"
+    },
+    {
+      "name": "Palace Sentinels",
+      "type": "Creature"
+    },
+    {
+      "name": "Search Party Captain",
+      "type": "Creature"
+    },
+    {
+      "name": "Custodi Squire",
+      "type": "Creature"
+    },
+    {
+      "name": "Disciple of the Sun",
+      "type": "Creature"
+    },
+    {
+      "name": "Sunblade Samurai",
+      "type": "Creature"
+    },
+    {
+      "name": "Alabaster Host Intercessor",
+      "type": "Creature"
+    },
+    {
+      "name": "Eagles of the North",
+      "type": "Creature"
+    },
+    {
+      "name": "Salt Road Packbeast",
+      "type": "Creature"
+    },
+    {
+      "name": "White Auracite",
+      "type": "Artifact"
+    },
+    {
+      "name": "Ephemerate",
+      "type": "Instant"
+    },
+    {
+      "name": "Mana Tithe",
+      "type": "Instant"
+    },
+    {
+      "name": "Coordinated Maneuver",
+      "type": "Instant"
+    },
+    {
+      "name": "Last Breath",
+      "type": "Instant"
+    },
+    {
+      "name": "Sejiri Shelter // Sejiri Glacier",
+      "type": "Instant"
+    },
+    {
+      "name": "Thraben Charm",
+      "type": "Instant"
+    },
+    {
+      "name": "Unbounded Potential",
+      "type": "Instant"
+    },
+    {
+      "name": "Crib Swap",
+      "type": "Instant"
+    },
+    {
+      "name": "Holy Light",
+      "type": "Instant"
+    },
+    {
+      "name": "Lapse of Certainty",
+      "type": "Instant"
+    },
+    {
+      "name": "Sunlance",
+      "type": "Sorcery"
+    },
+    {
+      "name": "Expel the Unworthy",
+      "type": "Sorcery"
+    },
+    {
+      "name": "Recommission",
+      "type": "Sorcery"
+    },
+    {
+      "name": "Journey to Nowhere",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Reprobation",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Weight of Conscience",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Banishing Light",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Citizen's Arrest",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Mystical Tether",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Oblivion Ring",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Stormplain Detainment",
+      "type": "Enchantment"
+    },
+    {
+      "name": "Avishkar Raceway",
+      "type": "Land"
+    },
+    {
+      "name": "Desert",
+      "type": "Land"
+    },
+    {
+      "name": "Desert of the True",
+      "type": "Land"
+    },
+    {
+      "name": "Drifting Meadow",
+      "type": "Land"
+    },
+    {
+      "name": "Hidden Courtyard",
+      "type": "Land"
+    },
+    {
+      "name": "Idyllic Grange",
+      "type": "Land"
+    },
+    {
+      "name": "Path of Ancestry",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Plains",
+      "type": "Land"
+    },
+    {
+      "name": "Quicksand",
+      "type": "Land"
+    },
+    {
+      "name": "Secluded Steppe",
+      "type": "Land"
+    },
+    {
+      "name": "The Fair Basilica",
+      "type": "Land"
+    },
+    {
+      "name": "Tocasia's Dig Site",
+      "type": "Land"
+    }
+  ]
+}
