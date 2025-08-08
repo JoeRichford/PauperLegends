@@ -1,182 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pauper Legends - Decks</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url(https://raw.githubusercontent.com/pauperlegends/PauperLegends/refs/heads/main/pauperlegends.jpg) no-repeat center center fixed;
-      background-size: cover;
-      color: #f0f0f0;
-    }
-
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid crimson;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: gold;
-    }
-
-    nav {
-      background-color: #222;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      padding: 10px 0;
-      border-bottom: 1px solid #333;
-    }
-
-    nav a {
-      color: #f0f0f0;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: crimson;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 12px;
-      box-shadow: 0 0 10px #000;
-    }
-
-    .section h2 {
-      color: crimson;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
-    }
-
-    .deck {
-      background: #222;
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-
-    .deck h3 {
-      margin: 0;
-      cursor: pointer;
-      color: #33ccff;
-      font-size: 1.2rem;
-    }
-
-    .card-list {
-      display: none;
-      margin-top: 10px;
-      padding-left: 20px;
-      list-style: none;
-    }
-
-    .card-list li {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      cursor: pointer;
-      margin: 2px 0;
-    }
-
-    .card-list li strong {
-      display: inline-block;
-      margin-top: 10px;
-      color: #ffcc66;
-    }
-
-    .card-list li:hover {
-      text-decoration: underline;
-      color: #fff;
-    }
-
-    #card-preview {
-  position: fixed;
-  top: 100px;
-  right: 30px;
-  width: 550px;
-  max-height: 400px;
-  border: 2px solid #555;
-  background-color: #1e1e1e;
-  padding: 10px;
-  display: none;
-  flex-direction: column;
-  z-index: 100;
-  border-radius: 8px;
-}
-
-#preview-header {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#preview-header button {
-  background: crimson;
-  color: white;
-  border: none;
-  font-size: 1rem;
-  padding: 3px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#preview-content {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-#preview-image {
-  width: 200px;
-  border: 1px solid #555;
-  border-radius: 4px;
-}
-
-#card-text {
-  flex: 1;
-  font-size: 0.85rem;
-  color: #ccc;
-  overflow-y: auto;
-  max-height: 320px;
-}
-
-#card-text h4 {
-  color: gold;
-  margin: 0 0 5px;
-  font-size: 1.1rem;
-}
-
-    #card-preview img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    footer {
-      background-color: #111;
-      color: #888;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      margin-top: 40px;
-      border-top: 1px solid #333;
-    }
   </style>
 </head>
 <body>
+
+<!-- LEFT: Goreclaw -->
+<div class="side-strip left">
+  <div class="scroll-track">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/Goreclaw.jpg" alt="Goreclaw">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/Goreclaw.jpg" alt="Goreclaw">
+  </div>
+</div>
+
+<!-- RIGHT: Juri -->
+<div class="side-strip right">
+  <div class="scroll-track">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/juri.jpg" alt="Juri">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/juri.jpg" alt="Juri">
+  </div>
+</div>
 
   <header>
     <h1>Pauper Legends</h1>
@@ -192,201 +40,10 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="section">
-    <h2>Deck Showcase</h2>
-
-    <!-- 🔻 START DECK BLOCK -->
-    <div class="deck">
-  <h3 onclick="toggleDeck(this)">Kreat Goblins</h3>
-  <ul class="card-list">
-    <li><strong>COMMANDER</strong></li>
-    <li onclick="showCardImage(event, 'General Kreat, the Boltbringer')">1 General Kreat, the Boltbringer</li>
-    <br />
-    <li><strong>CREATURES</strong></li>
-    <li onclick="showCardImage(event, 'Akki Scrapchomper')">1 Akki Scrapchomper</li>
-    <li onclick="showCardImage(event, 'Fanatical Firebrand')">1 Fanatical Firebrand</li>
-    <li onclick="showCardImage(event, 'Foundry Street Denizen')">1 Foundry Street Denizen</li>
-    <li onclick="showCardImage(event, 'Goblin Blast-Runner')">1 Goblin Blast-Runner</li>
-    <li onclick="showCardImage(event, 'Goblin Bushwhacker')">1 Goblin Bushwhacker</li>
-    <li onclick="showCardImage(event, 'Goblin Champion')">1 Goblin Champion</li>
-    <li onclick="showCardImage(event, 'Goblin Chirurgeon')">1 Goblin Chirurgeon</li>
-    <li onclick="showCardImage(event, 'Goblin Javelineer')">1 Goblin Javelineer</li>
-    <li onclick="showCardImage(event, 'Goblin Sledder')">1 Goblin Sledder</li>
-    <li onclick="showCardImage(event, 'Goblin Taskmaster')">1 Goblin Taskmaster</li>
-    <li onclick="showCardImage(event, 'Goblin Tomb Raider')">1 Goblin Tomb Raider</li>
-    <li onclick="showCardImage(event, 'Lavastep Raider')">1 Lavastep Raider</li>
-    <li onclick="showCardImage(event, 'Mogg Raider')">1 Mogg Raider</li>
-    <li onclick="showCardImage(event, 'Mudbutton Clanger')">1 Mudbutton Clanger</li>
-    <li onclick="showCardImage(event, 'Reckless Lackey')">1 Reckless Lackey</li>
-    <li onclick="showCardImage(event, 'Sarpadian Simulacrum')">1 Sarpadian Simulacrum</li>
-    <li onclick="showCardImage(event, 'Skirk Prospector')">1 Skirk Prospector</li>
-    <li onclick="showCardImage(event, 'Tin Street Dodger')">1 Tin Street Dodger</li>
-    <li onclick="showCardImage(event, 'Dark-Dweller Oracle')">1 Dark-Dweller Oracle</li>
-    <li onclick="showCardImage(event, 'Devoted Duelist')">1 Devoted Duelist</li>
-    <li onclick="showCardImage(event, 'Goblin Instigator')">1 Goblin Instigator</li>
-    <li onclick="showCardImage(event, 'Goblin Lookout')">1 Goblin Lookout</li>
-    <li onclick="showCardImage(event, 'Mogg War Marshal')">1 Mogg War Marshal</li>
-    <li onclick="showCardImage(event, 'Mudbrawler Cohort')">1 Mudbrawler Cohort</li>
-    <li onclick="showCardImage(event, 'Shock Brigade')">1 Shock Brigade</li>
-    <li onclick="showCardImage(event, 'Sparksmith')">1 Sparksmith</li>
-    <li onclick="showCardImage(event, 'Goblin Matron')">1 Goblin Matron</li>
-    <li onclick="showCardImage(event, 'Molten Gatekeeper')">1 Molten Gatekeeper</li>
-    <li onclick="showCardImage(event, 'Simian Spirit Guide')">1 Simian Spirit Guide</li>
-    <li onclick="showCardImage(event, 'Underfoot Underdogs')">1 Underfoot Underdogs</li>
-    <li onclick="showCardImage(event, 'Beetleback Chief')">1 Beetleback Chief</li>
-    <br />
-    <li><strong>ARTIFACTS</strong></li>
-    <li onclick="showCardImage(event, 'Lotus Petal')">1 Lotus Petal</li>
-    <br />
-    <li><strong>INSTANTS</strong></li>
-    <li onclick="showCardImage(event, 'Brightstone Ritual')">1 Brightstone Ritual</li>
-    <li onclick="showCardImage(event, 'Collateral Damage')">1 Collateral Damage</li>
-    <li onclick="showCardImage(event, 'Lightning Bolt')">1 Lightning Bolt</li>
-    <li onclick="showCardImage(event, 'Pyroblast')">1 Pyroblast</li>
-    <li onclick="showCardImage(event, 'Red Elemental Blast')">1 Red Elemental Blast</li>
-    <li onclick="showCardImage(event, 'Weapon Surge')">1 Weapon Surge</li>
-    <li onclick="showCardImage(event, 'Chandra's Pyrohelix')">1 Chandra's Pyrohelix</li>
-    <li onclick="showCardImage(event, 'Incinerate')">1 Incinerate</li>
-    <li onclick="showCardImage(event, 'Lightning Strike')">1 Lightning Strike</li>
-    <li onclick="showCardImage(event, 'Magma Jet')">1 Magma Jet</li>
-    <li onclick="showCardImage(event, 'Searing Blaze')">1 Searing Blaze</li>
-    <li onclick="showCardImage(event, 'Searing Spear')">1 Searing Spear</li>
-    <li onclick="showCardImage(event, 'Twin Bolt')">1 Twin Bolt</li>
-    <li onclick="showCardImage(event, 'Brimstone Volley')">1 Brimstone Volley</li>
-    <li onclick="showCardImage(event, 'Goblin Surprise')">1 Goblin Surprise</li>
-    <li onclick="showCardImage(event, 'Thunderclap')">1 Thunderclap</li>
-    <li onclick="showCardImage(event, 'Volatile Claws')">1 Volatile Claws</li>
-    <li onclick="showCardImage(event, 'Mine Collapse')">1 Mine Collapse</li>
-    <li onclick="showCardImage(event, 'Fireblast')">1 Fireblast</li>
-    <br />
-    <li><strong>SORCERIES</strong></li>
-    <li onclick="showCardImage(event, 'Goblin Grenade')">1 Goblin Grenade</li>
-    <li onclick="showCardImage(event, 'Rite of Flame')">1 Rite of Flame</li>
-    <li onclick="showCardImage(event, 'Dragon Fodder')">1 Dragon Fodder</li>
-    <li onclick="showCardImage(event, 'Highway Robbery')">1 Highway Robbery</li>
-    <li onclick="showCardImage(event, 'Krenko's Command')">1 Krenko's Command</li>
-    <li onclick="showCardImage(event, 'Reckless Impulse')">1 Reckless Impulse</li>
-    <li onclick="showCardImage(event, 'Wrenn's Resolve')">1 Wrenn's Resolve</li>
-    <li onclick="showCardImage(event, 'Hordeling Outburst')">1 Hordeling Outburst</li>
-    <li onclick="showCardImage(event, 'Empty the Warrens')">1 Empty the Warrens</li>
-    <br />
-    <li><strong>ENCHANTMENTS</strong></li>
-    <li onclick="showCardImage(event, 'Impact Tremors')">1 Impact Tremors</li>
-    <li onclick="showCardImage(event, 'Makeshift Munitions')">1 Makeshift Munitions</li>
-    <li onclick="showCardImage(event, 'Raid Bombardment')">1 Raid Bombardment</li>
-    <br />
-    <li><strong>LANDS</strong></li>
-    <li onclick="showCardImage(event, 'Mountain')">34 Mountain</li>
-    <li onclick="showCardImage(event, 'Opal Palace')">1 Opal Palace</li>
-    <li onclick="showCardImage(event, 'Path of Ancestry')">1 Path of Ancestry</li>
-    <br />
-  </ul>
+<div class="section">
+  <h2>Deck Showcase</h2>
+  <div id="decks-container"></div>
 </div>
-
-<div class="deck">
-  <h3 onclick="toggleDeck(this)">Kutzil Value</h3>
-  <ul class="card-list">
-    <li><strong>COMMANDER</strong></li>
-    <li onclick="showCardImage(event, 'Kutzil, Malamet Exemplar')">1 Kutzil, Malamet Exemplar</li>
-    <br />
-    <li><strong>CREATURES</strong></li>
-    <li onclick="showCardImage(event, 'Benevolent Bodyguard')">1 Benevolent Bodyguard</li>
-    <li onclick="showCardImage(event, 'Experiment One')">1 Experiment One</li>
-    <li onclick="showCardImage(event, 'Hopeful Eidolon')">1 Hopeful Eidolon</li>
-    <li onclick="showCardImage(event, 'Novice Inspector')">1 Novice Inspector</li>
-    <li onclick="showCardImage(event, 'Nyxborn Hydra')">1 Nyxborn Hydra</li>
-    <li onclick="showCardImage(event, 'Sunshower Druid')">1 Sunshower Druid</li>
-    <li onclick="showCardImage(event, 'Thraben Inspector')">1 Thraben Inspector</li>
-    <li onclick="showCardImage(event, 'Ainok Bond-Kin')">1 Ainok Bond-Kin</li>
-    <li onclick="showCardImage(event, 'Duskshell Crawler')">1 Duskshell Crawler</li>
-    <li onclick="showCardImage(event, 'Elvish Visionary')">1 Elvish Visionary</li>
-    <li onclick="showCardImage(event, 'Faithful Watchdog')">1 Faithful Watchdog</li>
-    <li onclick="showCardImage(event, 'Fortress Kin-Guard')">1 Fortress Kin-Guard</li>
-    <li onclick="showCardImage(event, 'Guardian Gladewalker')">1 Guardian Gladewalker</li>
-    <li onclick="showCardImage(event, 'Helpful Hunter')">1 Helpful Hunter</li>
-    <li onclick="showCardImage(event, 'Ironpaw Aspirant')">1 Ironpaw Aspirant</li>
-    <li onclick="showCardImage(event, 'Kujar Seedsculptor')">1 Kujar Seedsculptor</li>
-    <li onclick="showCardImage(event, 'Pollenbright Druid')">1 Pollenbright Druid</li>
-    <li onclick="showCardImage(event, 'Qasali Pridemage')">1 Qasali Pridemage</li>
-    <li onclick="showCardImage(event, 'Spirited Companion')">1 Spirited Companion</li>
-    <li onclick="showCardImage(event, 'Evolution Witness')">1 Evolution Witness</li>
-    <li onclick="showCardImage(event, 'Heliod's Pilgrim')">1 Heliod's Pilgrim</li>
-    <li onclick="showCardImage(event, 'Inspiring Overseer')">1 Inspiring Overseer</li>
-    <li onclick="showCardImage(event, 'Inspiring Paladin')">1 Inspiring Paladin</li>
-    <li onclick="showCardImage(event, 'Jewel Thief')">1 Jewel Thief</li>
-    <li onclick="showCardImage(event, 'Llanowar Visionary')">1 Llanowar Visionary</li>
-    <li onclick="showCardImage(event, 'Pridemalkin')">1 Pridemalkin</li>
-    <li onclick="showCardImage(event, 'Priest of Ancient Lore')">1 Priest of Ancient Lore</li>
-    <li onclick="showCardImage(event, 'Tuskguard Captain')">1 Tuskguard Captain</li>
-    <li onclick="showCardImage(event, 'Blessed Hippogriff // Tyr's Blessing')">1 Blessed Hippogriff // Tyr's Blessing</li>
-    <li onclick="showCardImage(event, 'Felidar Savior')">1 Felidar Savior</li>
-    <li onclick="showCardImage(event, 'Temperamental Oozewagg')">1 Temperamental Oozewagg</li>
-    <li onclick="showCardImage(event, 'Eagles of the North')">1 Eagles of the North</li>
-    <li onclick="showCardImage(event, 'Generous Ent')">1 Generous Ent</li>
-    <br />
-    <li><strong>ARTIFACTS</strong></li>
-    <li onclick="showCardImage(event, 'Mandibular Kite')">1 Mandibular Kite</li>
-    <br />
-    <li><strong>INSTANTS</strong></li>
-    <li onclick="showCardImage(event, 'Ephemerate')">1 Ephemerate</li>
-    <li onclick="showCardImage(event, 'Snakeskin Veil')">1 Snakeskin Veil</li>
-    <li onclick="showCardImage(event, 'Tamiyo's Safekeeping')">1 Tamiyo's Safekeeping</li>
-    <li onclick="showCardImage(event, 'Ephemeral Shields')">1 Ephemeral Shields</li>
-    <li onclick="showCardImage(event, 'Gaea's Gift')">1 Gaea's Gift</li>
-    <li onclick="showCardImage(event, 'Moment's Peace')">1 Moment's Peace</li>
-    <li onclick="showCardImage(event, 'Sejiri Shelter // Sejiri Glacier')">1 Sejiri Shelter // Sejiri Glacier</li>
-    <li onclick="showCardImage(event, 'Selesnya Charm')">1 Selesnya Charm</li>
-    <li onclick="showCardImage(event, 'Take Up the Shield')">1 Take Up the Shield</li>
-    <li onclick="showCardImage(event, 'Thraben Charm')">1 Thraben Charm</li>
-    <li onclick="showCardImage(event, 'Khalni Ambush // Khalni Territory')">1 Khalni Ambush // Khalni Territory</li>
-    <br />
-    <li><strong>SORCERIES</strong></li>
-    <li onclick="showCardImage(event, 'Bushwhack')">1 Bushwhack</li>
-    <li onclick="showCardImage(event, 'Expel the Unworthy')">1 Expel the Unworthy</li>
-    <li onclick="showCardImage(event, 'Recommission')">1 Recommission</li>
-    <li onclick="showCardImage(event, 'Return Triumphant')">1 Return Triumphant</li>
-    <br />
-    <li><strong>ENCHANTMENTS</strong></li>
-    <li onclick="showCardImage(event, 'Ethereal Armor')">1 Ethereal Armor</li>
-    <li onclick="showCardImage(event, 'Hyena Umbra')">1 Hyena Umbra</li>
-    <li onclick="showCardImage(event, 'Rancor')">1 Rancor</li>
-    <li onclick="showCardImage(event, 'Spider Umbra')">1 Spider Umbra</li>
-    <li onclick="showCardImage(event, 'Dog Umbra')">1 Dog Umbra</li>
-    <li onclick="showCardImage(event, 'Journey to Nowhere')">1 Journey to Nowhere</li>
-    <li onclick="showCardImage(event, 'Petrify')">1 Petrify</li>
-    <li onclick="showCardImage(event, 'Planar Disruption')">1 Planar Disruption</li>
-    <li onclick="showCardImage(event, 'Realmbreaker's Grasp')">1 Realmbreaker's Grasp</li>
-    <li onclick="showCardImage(event, 'Temporal Isolation')">1 Temporal Isolation</li>
-    <li onclick="showCardImage(event, 'Armadillo Cloak')">1 Armadillo Cloak</li>
-    <li onclick="showCardImage(event, 'Captured by Lagacs')">1 Captured by Lagacs</li>
-    <li onclick="showCardImage(event, 'Chains of Custody')">1 Chains of Custody</li>
-    <li onclick="showCardImage(event, 'Oblivion Ring')">1 Oblivion Ring</li>
-    <li onclick="showCardImage(event, 'Snake Umbra')">1 Snake Umbra</li>
-    <br />
-    <li><strong>LANDS</strong></li>
-    <li onclick="showCardImage(event, 'Ancient Den')">1 Ancient Den</li>
-    <li onclick="showCardImage(event, 'Arctic Treeline')">1 Arctic Treeline</li>
-    <li onclick="showCardImage(event, 'Ash Barrens')">1 Ash Barrens</li>
-    <li onclick="showCardImage(event, 'Blossoming Sands')">1 Blossoming Sands</li>
-    <li onclick="showCardImage(event, 'Botanical Plaza')">1 Botanical Plaza</li>
-    <li onclick="showCardImage(event, 'Brokers Hideout')">1 Brokers Hideout</li>
-    <li onclick="showCardImage(event, 'Cabaretti Courtyard')">1 Cabaretti Courtyard</li>
-    <li onclick="showCardImage(event, 'Command Tower')">1 Command Tower</li>
-    <li onclick="showCardImage(event, 'Etched Cornfield')">1 Etched Cornfield</li>
-    <li onclick="showCardImage(event, 'Evolving Wilds')">1 Evolving Wilds</li>
-    <li onclick="showCardImage(event, 'Forest')">10 Forest</li>
-    <li onclick="showCardImage(event, 'Path of Ancestry')">1 Path of Ancestry</li>
-    <li onclick="showCardImage(event, 'Plains')">10 Plains</li>
-    <li onclick="showCardImage(event, 'Radiant Grove')">1 Radiant Grove</li>
-    <li onclick="showCardImage(event, 'Terramorphic Expanse')">1 Terramorphic Expanse</li>
-    <li onclick="showCardImage(event, 'Thornglint Bridge')">1 Thornglint Bridge</li>
-    <li onclick="showCardImage(event, 'Tree of Tales')">1 Tree of Tales</li>
-    <br />
-  </ul>
-</div>
-    <!-- 🔺 END DECK BLOCK -->
-
-  </div>
 
   <!-- 📌 Fixed card image preview panel -->
   <div id="card-preview">
@@ -450,5 +107,99 @@
     preview.style.display = 'none';
   }
 </script>
+
+<script>
+  document.querySelectorAll('.deck-title').forEach(button => {
+    button.addEventListener('click', () => {
+      const cards = button.nextElementSibling;
+      const isVisible = cards.style.display === 'block';
+      cards.style.display = isVisible ? 'none' : 'block';
+      button.textContent = isVisible
+        ? button.textContent.replace('▲', '▼')
+        : button.textContent.replace('▼', '▲');
+    });
+  });
+</script>
+
+<!-- Card Info Sidebar -->
+<div id="card-info-panel" class="card-info-panel">
+  <img id="card-img" src="" alt="Card Image" />
+  <div id="card-details" class="card-details">
+    <h3 id="card-name">Card Name</h3>
+    <p id="card-mana-cost">Mana Cost: </p>
+    <p id="card-type">Type: </p>
+    <p id="card-text">Card Text: </p>
+    <p id="card-author">Author: </p>
+    <!-- Add any other fields you want here -->
+  </div>
+</div>
+
+<script>
+  async function loadDecks() {
+    try {
+      const response = await fetch('decks.json');
+      const decks = await response.json();
+      const container = document.getElementById('decks-container');
+      container.innerHTML = '';
+
+      decks.forEach(deck => {
+        // Create deck wrapper
+        const deckDiv = document.createElement('div');
+        deckDiv.className = 'deck';
+
+        // Create deck title as a button to toggle cards
+        const deckTitle = document.createElement('button');
+        deckTitle.className = 'deck-title';
+        deckTitle.textContent = deck.deckName + ' - ' + deck.author;
+        deckDiv.appendChild(deckTitle);
+
+        // Create card list container (ul)
+        const cardList = document.createElement('ul');
+        cardList.className = 'card-list';
+        cardList.style.display = 'none'; // collapsed by default
+
+        // Group cards by type (optional)
+        let lastType = null;
+        deck.cards.forEach(card => {
+          if(card.type && card.type !== lastType){
+            const typeHeader = document.createElement('li');
+            typeHeader.innerHTML = '<strong>' + card.type.toUpperCase() + '</strong>';
+            cardList.appendChild(typeHeader);
+            lastType = card.type;
+          }
+          // Create card li
+          const li = document.createElement('li');
+          li.textContent = '1 ' + card.name; // You can add quantity if you want
+          li.style.cursor = 'pointer';
+          li.onclick = () => showCardImage(null, card.name);
+          cardList.appendChild(li);
+        });
+
+        deckDiv.appendChild(cardList);
+        container.appendChild(deckDiv);
+
+        // Toggle show/hide cards on title click
+        deckTitle.addEventListener('click', () => {
+          if(cardList.style.display === 'none'){
+            cardList.style.display = 'block';
+            deckTitle.textContent = deck.deckName + ' - ' + deck.author + ' ▲';
+          } else {
+            cardList.style.display = 'none';
+            deckTitle.textContent = deck.deckName + ' - ' + deck.author + ' ▼';
+          }
+        });
+
+        // Initialize with arrow down
+        deckTitle.textContent += ' ▼';
+      });
+    } catch (err) {
+      console.error('Error loading decks:', err);
+    }
+  }
+
+  // Load decks when page loads
+  window.addEventListener('DOMContentLoaded', loadDecks);
+</script>
+
 </body>
 </html>
