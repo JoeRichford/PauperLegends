@@ -14,26 +14,24 @@
   }
 
   header {
-    background: linear-gradient(to bottom, rgba(17,17,17,0.9), rgba(0,0,0,0.6));
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 3px solid gold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-  }
+  background-image: url('https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/battle.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: gold;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  border-bottom: 3px solid gold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
 
-  header h1 {
-    margin: 0;
-    font-size: 3rem;
-    color: gold;
-    text-shadow: 0 0 10px rgba(255,215,0,0.7);
-  }
-
-  header p {
-    font-size: 1.3rem;
-    color: #ccc;
-    font-style: italic;
-  }
-
+header h1,
+header p {
+  text-shadow:
+    0 0 8px rgba(0,0,0,0.7),   /* dark outline for contrast */
+    0 0 5px rgba(255,215,0,0.8), /* golden glow */
+    0 0 10px rgba(255,215,0,0.6); /* softer outer glow */
+}
   nav {
     background: rgba(20,20,20,0.95);
     display: flex;
@@ -104,9 +102,137 @@
     margin-top: 40px;
     border-top: 2px solid crimson;
   }
+   
+  /* SIDE DECORATIONS */
+  .side-art {
+    position: fixed;
+    top: 100px;
+    width: 200px;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .side-art.left {
+    left: 0;
+  }
+
+  .side-art.right {
+    right: 0;
+  }
+
+  /* Make sure side art disappears on small screens */
+  @media (max-width: 900px) {
+    .side-art {
+      display: none;
+    }
+  }
+
+  /* SIDE PANELS */
+.side-strip {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  overflow: hidden;
+  z-index: -1;
+  background: rgba(0,0,0,0.4);
+}
+
+.side-strip.left { left: 0; }
+.side-strip.right { right: 0; }
+
+.side-strip .scroll-track {
+  display: flex;
+  height: 100%;
+  animation: scrollArtX 10s linear infinite;
+}
+
+.side-strip img {
+  height: 100%;
+  min-width: 100%; /* Ensure full image is shown */
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@keyframes scrollArtX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* move full width */
+}
+
+/* ===== MOBILE FRIENDLY ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 20px 15px;
+    margin: 20px auto;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+  }
+
+  /* Hide side strips on mobile to save space */
+  .side-strip {
+    display: none;
+  }
+}
+
+/* Super small screens like old phones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    gap: 8px;
+  }
+}
+
 </style>
 </head>
 <body>
+
+ <!-- LEFT SIDE STRIP: Goreclaw -->
+<div class="side-strip left">
+  <div class="scroll-track">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/Goreclaw.jpg" alt="Goreclaw">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/Goreclaw.jpg" alt="Goreclaw">
+  </div>
+</div>
+
+<!-- RIGHT SIDE STRIP: Juri -->
+<div class="side-strip right">
+  <div class="scroll-track">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/juri.jpg" alt="Juri">
+    <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/juri.jpg" alt="Juri">
+  </div>
+</div>
 
   <header>
     <h1>Pauper legends</h1>
