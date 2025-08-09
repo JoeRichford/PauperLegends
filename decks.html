@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pauper Legends - Decks</title>
+  <style>
+    /* Compact Deck List Styling */
+    .decklist-container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .decklist-section {
+      margin-bottom: 20px;
+    }
+    .decklist-section h3 {
+      border-bottom: 1px solid #888;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      color: #ffcc66;
+    }
+    .decklist-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none; /* collapsed by default */
+    }
+    .decklist-section:first-child ul {
+      display: block; /* first expanded */
+    }
+    .decklist-section li {
+      padding: 2px 0;
+      cursor: pointer;
+      color: #fff;
+    }
+    .decklist-section li:hover {
+      color: #ffcc66;
+    }
+    /* Make h3 collapsible style */
+    .decklist-section h3.collapsible {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Deck description styling */
+    .deck-description {
+      max-width: 800px;
+      margin: 10px auto 20px auto;
+      color: #ddd;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    /* Card Popup */
+    .card-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(20,20,20,0.95);
+      padding: 10px 20px 20px 20px;
+      border-radius: 8px;
+      display: none;
+      z-index: 1000;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 0 20px #000;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .card-popup .popup-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .card-popup img {
+      max-width: 45%;
+      border-radius: 6px;
+    }
+    #popupText {
+      max-width: 45%;
+      color: #eee;
+      text-align: left;
+      overflow-y: auto;
+      max-height: 350px;
+    }
+    .popup-close {
+      display: block;
+      margin-top: 10px;
+      color: #ff6666;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Overlay for background dim */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      z-index: 999;
+    }
+
+    /* Responsive / Mobile Friendly */
+    @media (max-width: 600px) {
+      .decklist-container {
+        padding: 15px;
+        max-width: 95%;
+      }
+      header, nav, footer {
+        padding: 10px;
+        text-align: center;
+      }
+      nav a {
+        display: inline-block;
+        margin: 4px 6px;
+      }
+      .card-popup .popup-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      #popupImage, #popupText {
+        max-width: 90% !important;
+        max-height: none !important;
+      }
+      .deck-description {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- SIDE STRIPS -->
+  <div class="side-strip left">
+    <div class="scroll-track">
+      <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/Goreclaw.jpg" alt="Side Image">
+      <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/Goreclaw.jpg" alt="Side Image">
+    </div>
+  </div>
+  <div class="side-strip right">
+    <div class="scroll-track">
+      <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/juri.jpg" alt="Side Image">
+      <img src="https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/juri.jpg" alt="Side Image">
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Pauper Legends</h1>
+    <p>The battlefield for budget legends</p>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="decks.html" class="active">Decks</a>
+    <a href="#tournaments">Tournaments</a>
+    <a href="#rules">Rules</a>
+    <a href="#banned">Banned</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- DECK LIST -->
+  <div class="section" id="decks">
+  <h2>Featured Champion Deck</h2>  
+  <h2>Anafenza Go Wide</h2>
+
+    <p class="deck-description">
+      Led by Anafenza, Kin-Tree Spirit, this budget-friendly whiteweenie deck floods the board with resilient creatures and clever combat tricks. Packed with removal, protection spells, and token synergies, it balances aggressive early pressure with mid-game control—perfect for dominating the Pauper Legends meta.
+    </p>
+
+    <div class="decklist-section">
+  <h3 class="collapsible">COMMANDER (1) ▼</h3>
+  <ul>
+    <li data-card="Anafenza, Kin-Tree Spirit">1x Anafenza, Kin-Tree Spirit</li>
+  </ul>
+</div>
+
+<div class="decklist-section">
+  <h3 class="collapsible">CREATURES (44) ▼</h3>
+  <ul>
+    <li data-card="Benevolent Bodyguard">1x Benevolent Bodyguard</li>
+    <li data-card="Deftblade Elite">1x Deftblade Elite</li>
+    <li data-card="Doomed Traveler">1x Doomed Traveler</li>
+    <li data-card="Frontline Strategist">1x Frontline Strategist</li>
+    <li data-card="Garrison Cat">1x Garrison Cat</li>
+    <li data-card="Hunted Witness">1x Hunted Witness</li>
+    <li data-card="Icatian Javelineers">1x Icatian Javelineers</li>
+    <li data-card="Law-Rune Enforcer">1x Law-Rune Enforcer</li>
+    <li data-card="Novice Inspector">1x Novice Inspector</li>
+    <li data-card="Sacred Cat">1x Sacred Cat</li>
+    <li data-card="Thraben Inspector">1x Thraben Inspector</li>
+    <li data-card="Ainok Bond-Kin">1x Ainok Bond-Kin</li>
+    <li data-card="Bishop's Soldier">1x Bishop's Soldier</li>
+    <li data-card="Cathar Commando">1x Cathar Commando</li>
+    <li data-card="Dawnbringer Cleric">1x Dawnbringer Cleric</li>
+    <li data-card="Fear of Surveillance">1x Fear of Surveillance</li>
+    <li data-card="Fencing Ace">1x Fencing Ace</li>
+    <li data-card="Helpful Hunter">1x Helpful Hunter</li>
+    <li data-card="Kor Skyfisher">1x Kor Skyfisher</li>
+    <li data-card="Leonin Surveyor">1x Leonin Surveyor</li>
+    <li data-card="Outlaw Medic">1x Outlaw Medic</li>
+    <li data-card="Raffine's Informant">1x Raffine's Informant</li>
+    <li data-card="Spirited Companion">1x Spirited Companion</li>
+    <li data-card="Standard Bearer">1x Standard Bearer</li>
+    <li data-card="Errand-Rider of Gondor">1x Errand-Rider of Gondor</li>
+    <li data-card="Inspiring Overseer">1x Inspiring Overseer</li>
+    <li data-card="Kor Sanctifiers">1x Kor Sanctifiers</li>
+    <li data-card="Militia Bugler">1x Militia Bugler</li>
+    <li data-card="Ministrant of Obligation">1x Ministrant of Obligation</li>
+    <li data-card="Priest of Ancient Lore">1x Priest of Ancient Lore</li>
+    <li data-card="Roving Harper">1x Roving Harper</li>
+    <li data-card="Aerie Auxiliary">1x Aerie Auxiliary</li>
+    <li data-card="Arashin Sunshield">1x Arashin Sunshield</li>
+    <li data-card="Basri's Acolyte">1x Basri's Acolyte</li>
+    <li data-card="Blessed Hippogriff">1x Blessed Hippogriff</li>
+    <li data-card="Felidar Savior">1x Felidar Savior</li>
+    <li data-card="Palace Sentinels">1x Palace Sentinels</li>
+    <li data-card="Search Party Captain">1x Search Party Captain</li>
+    <li data-card="Custodi Squire">1x Custodi Squire</li>
+    <li data-card="Disciple of the Sun">1x Disciple of the Sun</li>
+    <li data-card="Sunblade Samurai">1x Sunblade Samurai</li>
+    <li data-card="Alabaster Host Intercessor">1x Alabaster Host Intercessor</li>
+    <li data-card="Eagles of the North">1x Eagles of the North</li>
+    <li data-card="Salt Road Packbeast">1x Salt Road Packbeast</li>
+  </ul>
+</div>
+
+<div class="decklist-section">
+  <h3 class="collapsible">ARTIFACTS (1) ▼</h3>
+  <ul>
+    <li data-card="White Auracite">1x White Auracite</li>
+  </ul>
+</div>
+
+<div class="decklist-section">
+  <h3 class="collapsible">INSTANTS (10) ▼</h3>
+  <ul>
+    <li data-card="Ephemerate">1x Ephemerate</li>
+    <li data-card="Mana Tithe">1x Mana Tithe</li>
+    <li data-card="Coordinated Maneuver">1x Coordinated Maneuver</li>
+    <li data-card="Last Breath">1x Last Breath</li>
+    <li data-card="Sejiri Shelter">1x Sejiri Shelter</li>
+    <li data-card="Thraben Charm">1x Thraben Charm</li>
+    <li data-card="Unbounded Potential">1x Unbounded Potential</li>
+    <li data-card="Crib Swap">1x Crib Swap</li>
+    <li data-card="Holy Light">1x Holy Light</li>
+    <li data-card="Lapse of Certainty">1x Lapse of Certainty</li>
+  </ul>
+</div>
+
+<div class="decklist-section">
+  <h3 class="collapsible">SORCERIES (3) ▼</h3>
+  <ul>
+    <li data-card="Sunlance">1x Sunlance</li>
+    <li data-card="Expel the Unworthy">1x Expel the Unworthy</li>
+    <li data-card="Recommission">1x Recommission</li>
+  </ul>
+</div>
+
+<div class="decklist-section">
+  <h3 class="collapsible">ENCHANTMENTS (8) ▼</h3>
+  <ul>
+    <li data-card="Journey to Nowhere">1x Journey to Nowhere</li>
+    <li data-card="Reprobation">1x Reprobation</li>
+    <li data-card="Weight of Conscience">1x Weight of Conscience</li>
+    <li data-card="Banishing Light">1x Banishing Light</li>
+    <li data-card="Citizen's Arrest">1x Citizen's Arrest</li>
+    <li data-card="Mystical Tether">1x Mystical Tether</li>
+    <li data-card="Oblivion Ring">1x Oblivion Ring</li>
+    <li data-card="Stormplain Detainment">1x Stormplain Detainment</li>
+  </ul>
+</div>
+
+<div class="decklist-section">
+  <h3 class="collapsible">LANDS (33) ▼</h3>
+  <ul>
+    <li data-card="Avishkar Raceway">1x Avishkar Raceway</li>
+    <li data-card="Desert">1x Desert</li>
+    <li data-card="Desert of the True">1x Desert of the True</li>
+    <li data-card="Drifting Meadow">1x Drifting Meadow</li>
+    <li data-card="Hidden Courtyard">1x Hidden Courtyard</li>
+    <li data-card="Idyllic Grange">1x Idyllic Grange</li>
+    <li data-card="Path of Ancestry">1x Path of Ancestry</li>
+    <li data-card="Plains">22x Plains</li>
+    <li data-card="Quicksand">1x Quicksand</li>
+    <li data-card="Secluded Steppe">1x Secluded Steppe</li>
+    <li data-card="The Fair Basilica">1x The Fair Basilica</li>
+    <li data-card="Tocasia's Dig Site">1x Tocasia's Dig Site</li>
+  </ul>
+</div>
+
+  </div>
+
+  <!-- CARD POPUP -->
+  <div class="popup-overlay"></div>
+  <div class="card-popup" id="cardPopup">
+    <div class="popup-content">
+      <img id="popupImage" src="" alt="Card image">
+      <div id="popupText"></div>
+    </div>
+    <span class="popup-close" id="popupClose">Close</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Pauper Legends. All rights reserved.
+  </footer>
+
+  <script>
+    // Collapsible deck sections
+    document.querySelectorAll('.decklist-section h3.collapsible').forEach(header => {
+      header.style.cursor = 'pointer';
+      header.addEventListener('click', () => {
+        const ul = header.nextElementSibling; // the <ul> after <h3>
+        if (ul.style.display === 'none') {
+          ul.style.display = 'block';
+          header.textContent = header.textContent.replace('▲', '▼');
+        } else {
+          ul.style.display = 'none';
+          header.textContent = header.textContent.replace('▼', '▲');
+        }
+      });
+    });
+
+    // Card popup click to fetch card info
+    document.querySelectorAll('[data-card]').forEach(item => {
+      item.addEventListener('click', () => {
+        const cardName = item.getAttribute('data-card');
+        const encodedName = encodeURIComponent(cardName);
+        const apiUrl = `https://api.scryfall.com/cards/named?exact=${encodedName}`;
+
+        fetch(apiUrl)
+          .then(res => {
+            if (!res.ok) throw new Error('Card not found');
+            return res.json();
+          })
+          .then(data => {
+            let imageUrl = '';
+
+            if (data.image_uris && data.image_uris.normal) {
+              imageUrl = data.image_uris.normal;
+            } else if (data.card_faces && data.card_faces[0].image_uris && data.card_faces[0].image_uris.normal) {
+              imageUrl = data.card_faces[0].image_uris.normal;
+            } else {
+              imageUrl = 'https://via.placeholder.com/223x310?text=No+Image';
+            }
+
+            document.getElementById('popupImage').src = imageUrl;
+
+            // Compose detailed text with line breaks
+            let desc = `<strong>${data.name}</strong>`;
+            if (data.mana_cost) desc += ` <span style="color:#ffcc66;">${data.mana_cost}</span>`;
+            desc += '<br><br>';
+
+            const oracle = data.oracle_text || (data.card_faces ? data.card_faces.map(face => face.oracle_text).join('\n\n') : '');
+            desc += oracle.replace(/\n/g, '<br>');
+
+            if (data.flavor_text) {
+              desc += `<br><br><em style="color:#ccc;">${data.flavor_text}</em>`;
+            }
+
+            document.getElementById('popupText').innerHTML = desc;
+
+            document.querySelector('.popup-overlay').style.display = 'block';
+            document.getElementById('cardPopup').style.display = 'block';
+          })
+          .catch(error => {
+            alert('Error loading card info: ' + error.message);
+          });
+      });
+    });
+
+    // Popup close events
+    document.getElementById('popupClose').addEventListener('click', closePopup);
+    document.querySelector('.popup-overlay').addEventListener('click', closePopup);
+
+    function closePopup() {
+      document.getElementById('cardPopup').style.display = 'none';
+      document.querySelector('.popup-overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
