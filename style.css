@@ -1,0 +1,557 @@
+/* --- SAME STYLES AS INDEX PAGE (with updates) --- */
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif; /* Keep Cinzel for fantasy */
+  background: url(https://raw.githubusercontent.com/pauperlegends/PauperLegends/refs/heads/main/pauperlegends.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: #f0f0f0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+header {
+  background-image: url('https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/battle.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px 80px; /* slightly bigger for grandeur */
+  text-align: center;
+  color: gold;
+  text-shadow:
+    0 0 8px rgba(0,0,0,0.7),
+    0 0 10px rgba(255,215,0,0.9),
+    0 0 15px rgba(255,215,0,0.6);
+  border-bottom: 3px solid gold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+  font-variant: small-caps;
+}
+
+header h1 {
+  font-size: 3.6rem;
+  letter-spacing: 0.12em;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+}
+
+header p {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-style: italic;
+  text-shadow:
+    0 0 5px rgba(255,215,0,0.8);
+}
+
+nav {
+  background: rgba(20,20,20,0.95);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 14px 0;
+  border-bottom: 2px solid crimson;
+  font-family: 'Cinzel', serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  position: relative;
+  transition: color 0.3s;
+  padding: 3px 8px;
+  text-shadow: 0 0 4px rgba(255,215,0,0.7);
+  border-radius: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: crimson;
+  transition: width 0.3s;
+  border-radius: 1px;
+}
+
+nav a:hover {
+  color: crimson;
+  text-shadow: 0 0 6px crimson;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.section {
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  padding: 35px 30px;
+  margin: 45px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.75);
+}
+
+.section h2 {
+  color: gold;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  border-bottom: 2px solid crimson;
+  padding-bottom: 8px;
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.75),
+    0 0 12px rgba(255,215,0,0.5);
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+}
+
+ul {
+  line-height: 2;
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: #f5e88f;
+}
+
+footer {
+  background: rgba(15, 15, 15, 0.95);
+  color: #aaa;
+  text-align: center;
+  padding: 22px;
+  font-size: 1rem;
+  margin-top: 50px;
+  border-top: 2px solid crimson;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.06em;
+  font-variant: small-caps;
+  text-shadow: 0 0 4px rgba(255,215,0,0.5);
+}
+
+.side-strip {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  overflow: hidden;
+  z-index: -1;
+  background: rgba(0,0,0,0.4);
+}
+
+.side-strip.left { left: 0; }
+.side-strip.right { right: 0; }
+
+.side-strip .scroll-track {
+  display: flex;
+  height: 100%;
+  animation: scrollArtX 10s linear infinite;
+}
+
+.side-strip img {
+  height: 100%;
+  min-width: 100%;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@keyframes scrollArtX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Deck styles */
+.deck {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1.5px solid gold;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  padding: 14px 18px;
+  max-width: 620px;
+  color: #f0e68c;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 4px rgba(255,215,0,0.6);
+}
+
+.deck-title {
+  background: transparent;
+  border: none;
+  color: gold;
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 12px 0;
+  outline: none;
+  letter-spacing: 0.12em;
+  text-shadow:
+    0 0 5px rgba(255,215,0,0.7),
+    0 0 10px rgba(255,215,0,0.4);
+  transition: color 0.3s, text-shadow 0.3s;
+  text-transform: uppercase;
+}
+
+.deck-title:hover {
+  color: crimson;
+  text-shadow:
+    0 0 10px crimson,
+    0 0 20px crimson;
+}
+
+.deck-cards ul {
+  list-style-type: disc;
+  margin-left: 28px;
+  padding-left: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  font-family: 'Cinzel', serif;
+  color: #fff8a8;
+  line-height: 1.9;
+  text-shadow: 0 0 3px rgba(255,215,0,0.3);
+}
+
+/* Card info panel */
+.card-info-panel {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  width: 320px;
+  height: calc(100vh - 80px);
+  background: rgba(15, 15, 15, 0.95);
+  border-left: 3px solid gold;
+  box-shadow: -3px 0 15px rgba(0,0,0,0.8);
+  padding: 22px;
+  overflow-y: auto;
+  color: gold;
+  font-family: 'Cinzel', serif;
+  z-index: 1000;
+  display: none;
+  text-shadow: 0 0 4px rgba(255,215,0,0.7);
+}
+
+.card-info-panel img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  box-shadow: 0 0 12px rgba(255,215,0,0.5);
+}
+
+.card-details p {
+  margin: 9px 0;
+  line-height: 1.5;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.card-details h3 {
+  margin-bottom: 14px;
+  font-size: 1.7rem;
+  border-bottom: 2px solid crimson;
+  padding-bottom: 6px;
+  text-shadow:
+    0 0 7px rgba(255,215,0,0.8),
+    0 0 14px rgba(255,215,0,0.4);
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 768px) {
+  header {
+    padding: 60px 15px 50px;
+  }
+  header h1 {
+    font-size: 2.8rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 14px;
+    padding: 12px;
+  }
+  nav a {
+    font-size: 1.1rem;
+  }
+  .section {
+    padding: 28px 18px;
+    margin: 30px auto;
+  }
+  .section h2 {
+    font-size: 1.6rem;
+  }
+  .side-strip {
+    display: none;
+  }
+  .deck {
+    max-width: 100%;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+  }
+  .deck-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.1rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  nav {
+    gap: 8px;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+}
+
+_____
+
+body {
+      font-family: 'Cinzel', serif;
+      background: url('https://raw.githubusercontent.com/pauperlegends/PauperLegends/main/pauperlegends.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e68c;
+      margin: 0;
+      padding: 0 15px;
+    }
+    header {
+      text-align: center;
+      padding: 80px 15px 40px;
+      color: gold;
+      text-shadow:
+        0 0 8px rgba(0,0,0,0.7),
+        0 0 5px rgba(255,215,0,0.8),
+        0 0 10px rgba(255,215,0,0.6);
+      border-bottom: 3px solid gold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 6px;
+      font-style: italic;
+    }
+    nav {
+      background: rgba(20,20,20,0.95);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 12px 0;
+      border-bottom: 2px solid crimson;
+      margin-bottom: 40px;
+    }
+    nav a {
+      color: gold;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: crimson;
+      transition: width 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: crimson;
+      outline: none;
+    }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+    main {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      background: rgba(15, 15, 15, 0.85);
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+    main h2 {
+      font-size: 2rem;
+      color: gold;
+      border-bottom: 1px solid crimson;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px rgba(255,215,0,0.6);
+    }
+    main p.author {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: gold;
+      text-shadow:
+        0 0 8px rgba(0,0,0,0.7),
+        0 0 5px rgba(255,215,0,0.8);
+    }
+    ul.card-list {
+      list-style: disc;
+      padding-left: 25px;
+      font-size: 1.15rem;
+      color: #f0e68c;
+      margin-bottom: 30px;
+    }
+    ul.card-list li {
+      margin: 8px 0;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    ul.card-list li:hover,
+    ul.card-list li:focus {
+      color: crimson;
+      text-decoration: underline;
+      outline: none;
+    }
+    /* Card Preview Panel */
+    #card-preview {
+      position: fixed;
+      top: 20%;
+      right: 20px;
+      background: rgba(15, 15, 15, 0.95);
+      color: gold;
+      padding: 20px;
+      border: 2px solid gold;
+      max-width: 350px;
+      z-index: 1000;
+      box-shadow: 0 0 10px #b8860b;
+      border-radius: 8px;
+      display: none;
+      font-family: 'Cinzel', serif;
+      user-select: none;
+    }
+    #card-preview button {
+      background: crimson;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 6px 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    #card-preview img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      box-shadow: 0 0 8px rgba(255,215,0,0.7);
+    }
+    #card-preview h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+      border-bottom: 1px solid crimson;
+      padding-bottom: 5px;
+      text-shadow: 0 0 5px rgba(255,215,0,0.6);
+    }
+    #card-preview p {
+      line-height: 1.5;
+      font-size: 1rem;
+      white-space: pre-wrap;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 2px solid crimson;
+      margin-top: 40px;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      nav {
+        gap: 15px;
+      }
+      main {
+        margin: 20px auto 40px;
+        padding: 20px;
+      }
+      #card-preview {
+        position: static;
+        max-width: 100%;
+        margin: 20px auto 40px auto;
+        box-shadow: none;
+        border: none;
+        padding: 10px 15px;
+      }
+      #card-preview button {
+        display: block;
+        margin: 0 auto 15px auto;
+      }
+    }
+
+.decklist-section ul {
+  display: none;
+}
+.decklist-section:first-child ul {
+  display: block;
+}
+
+.deck-description {
+  max-width: 800px;
+  margin: 10px auto 20px auto;
+  color: #ddd;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .decklist-container {
+    padding: 15px;
+    max-width: 95%;
+  }
+  header, nav, footer {
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    display: inline-block;
+    margin: 4px 6px;
+  }
+  .card-popup .popup-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  #popupImage, #popupText {
+    max-width: 90% !important;
+    max-height: none !important;
+  }
+  .deck-description {
+    font-size: 1rem;
+  }
+}
